@@ -9,6 +9,7 @@ import {
   renderAvatar,
   renderBubble,
   renderInputToolbar,
+  renderSend,
 } from './GiftedChatElements';
 import {
   useFonts,
@@ -32,6 +33,7 @@ const Chat = ({ route, navigation }) => {
     variables: { id: roomId },
     pollInterval: 1000,
   });
+
   const [messages, setMessages] = useState([]);
   const [sendMessage] = useMutation(SEND_MESSAGE);
   useCallback((messages = []) => {
@@ -56,7 +58,7 @@ const Chat = ({ route, navigation }) => {
           };
         })
       );
-      console.log('hey!');
+      console.log(data);
     }
   }, [data]);
 
@@ -82,10 +84,10 @@ const Chat = ({ route, navigation }) => {
         minInputToolbarHeight={100}
         renderBubble={renderBubble}
         alwaysShowSend={true}
-        messagesContainerStyle={{ marginVertical: 30 }}
+        renderSend={renderSend}
+        messagesContainerStyle={styles.messageContainer}
         onSend={(messages) => onSend(messages)}
         showAvatarForEveryMessage={true}
-        renderAvatar={renderAvatar}
         renderLoading={() => {
           return <Text>Loading.....</Text>;
         }}

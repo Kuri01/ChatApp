@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
     padding: 0,
     minHeight: 100,
   },
+  icon: { marginHorizontal: 3 },
   textBox: {
     left: 15,
     justifyContent: 'flex-start',

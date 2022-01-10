@@ -1,4 +1,5 @@
-import { InputToolbar, Bubble, Avatar } from 'react-native-gifted-chat';
+import { InputToolbar, Bubble, Send } from 'react-native-gifted-chat';
+import { SendSign } from '../../Components/RoomsUser/Svg/SvgComponents';
 import { styles } from './Chat.styles';
 export function renderInputToolbar(props) {
   return (
@@ -9,6 +10,7 @@ export function renderInputToolbar(props) {
     />
   );
 }
+
 export function renderBubble(props) {
   return (
     <Bubble
@@ -35,7 +37,6 @@ export function renderBubble(props) {
     />
   );
 }
-
-export function renderAvatar(props) {
-  return <Avatar {...props} containerStyle={{ bottom: 30 }} />;
+export function renderSend(props) {
+  return <Send {...props} label={<SendSign />} containerStyle={styles.send} />;
 }

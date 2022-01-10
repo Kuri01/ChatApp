@@ -11,10 +11,14 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-end',
   },
+  icon: {
+    marginHorizontal: 5,
+  },
   name: {
     color: '#5603AD',
     marginHorizontal: 5,
     fontFamily: 'Poppins_600SemiBold',
+    fontSize: 16,
   },
   activityText: {
     fontSize: 12,
@@ -27,4 +31,9 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   goBackButton: { fontSize: 40, color: '#5603AD' },
+  headerComponent: {
+    borderBottomLeftRadius: 24,
+    borderBottomRightRadius: 24,
+    backgroundColor: '#B6DEFD',
+  },
 });

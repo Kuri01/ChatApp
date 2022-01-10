@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { useEffect } from 'react';
-import { LOAD_ROOMS, LOAD_USER } from '../../../GraphQL/Queries';
+import { LOAD_ROOMS } from '../../../GraphQL/Queries';
 import RoomsUser from '../../Components/RoomsUser/RoomsUser';
-import { Text, View, StyleSheet } from 'react-native';
-
+import { Text, View } from 'react-native';
 import { useFonts, Poppins_700Bold } from '@expo-google-fonts/poppins';
 import { RoomsHeader } from './RoomsHeader';
 
@@ -17,19 +15,21 @@ const Rooms = ({ navigation }) => {
   if (loading) return <Text>Loading...</Text>;
   if (error) return <Text>Error {error.message}</Text>;
   const rooms = data.usersRooms.rooms;
-
+  const userID = data.user.id;
   return (
     <View>
       <RoomsHeader />
-      {rooms.map((room) => (
-        <RoomsUser
-          key={room.id}
-          roomID={room.id}
-          name={room.name}
-          navigation={navigation}
-          userID={data.user.id}
-        />
-      ))}
+      {rooms.map((room) => {
+        return (
+          <RoomsUser
+            key={room.id}
+            roomID={room.id}
+            name={room.name}
+            navigation={navigation}
+            userID={userID}
+          />
+        );
+      })}
     </View>
   );
 };
