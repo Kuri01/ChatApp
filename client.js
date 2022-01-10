@@ -2,7 +2,7 @@ import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
-  uri: 'https://www.apollographql.com/docs/react/get-started/',
+  uri: 'https://chat.thewidlarzgroup.com/api/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
