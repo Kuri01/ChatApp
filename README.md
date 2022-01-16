@@ -1,3 +1,2 @@
-# TWG
-
-Chat App, created on recruitment needs for TheWidlarzGroup. Enjoy :) 
+# ChatApp
+Created on recruitment needs for TheWidlarzGroup. Enjoy :) 
